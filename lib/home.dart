@@ -1,4 +1,5 @@
 import 'package:agymcted/config.dart';
+import 'package:agymcted/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,25 +18,20 @@ class _HomePageState extends State<HomePage> {
     AppConfig.screenSizeStreamController
         .add([AppConfig.screenWidth, AppConfig.screenHeight]);
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Agymcted"),
-        ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: AppConfig.screenHeight,
-                  width: AppConfig.screenWidth,
-                  color: Colors.amber,
-                  child: Text(
-                    "test",
-                  ),
-                )
-              ],
-            ),
+      appBar: AppBar(
+        title: const Text("Agymcted"),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text("Groups"),
+              GroupContainer(),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
